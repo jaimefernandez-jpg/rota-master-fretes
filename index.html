@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rota Master — Fretes e Transportes em Piracicaba | Fale com o Lucas</title>
+  <meta name="description" content="Fretes, carretos e mudanças em Piracicaba e região com van Renault Master. Atendimento direto com o motorista dono, o Lucas. Orçamento rápido pelo WhatsApp (19) 97157-7055.">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/favicon-192.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rota Master — Fretes e Transportes em Piracicaba">
+  <meta property="og:description" content="Chamou, carregou, chegou. Fretes e carretos com van Renault Master, direto com o Lucas no WhatsApp.">
+  <meta property="og:image" content="assets/og-logo.png">
+  <meta property="og:locale" content="pt_BR">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MovingCompany",
+    "name": "Rota Master — Fretes e Transportes",
+    "description": "Fretes, carretos e mudanças em Piracicaba e região com van Renault Master.",
+    "telephone": "+5519971577055",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "R. Professor Wilson Azevedo Grilo, 185",
+      "addressLocality": "Piracicaba",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "areaServed": "Piracicaba e região",
+    "sameAs": []
+  }
+  </script>
+
+  <style>
+    :root {
+      --navy: #12355B;
+      --navy-deep: #0C2440;
+      --orange: #FF7A1A;
+      --orange-dark: #E56100;
+      --paper: #F5F7FA;
+      --white: #FFFFFF;
+      --slate: #52657D;
+      --tint: #E4EBF3;
+      --wa: #1EBE5D;
+      --radius: 14px;
+      --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+      --body: "Barlow", "Segoe UI", sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body);
+      color: var(--navy);
+      background: var(--paper);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+    .eyebrow {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--orange-dark);
+    }
+    h1, h2, h3 {
+      font-family: var(--display);
+      text-transform: uppercase;
+      line-height: 1.05;
+      letter-spacing: 0.5px;
+    }
+    h2 { font-size: clamp(30px, 4.5vw, 44px); font-weight: 800; }
+
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--orange);
+      color: var(--white);
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 26px;
+      border-radius: 999px;
+      box-shadow: 0 6px 18px rgba(255, 122, 26, 0.35);
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+    .btn-wa:hover { background: var(--orange-dark); transform: translateY(-2px); }
+    .btn-wa:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; }
+    .btn-wa svg { flex: none; }
+
+    /* ---------- header ---------- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--tint);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 24px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand img { width: 46px; height: 46px; border-radius: 10px; }
+    .brand-name {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .brand-name small {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--orange-dark);
+      font-weight: 700;
+    }
+    .nav .btn-wa { font-size: 16px; padding: 9px 18px; box-shadow: none; }
+
+    /* ---------- hero ---------- */
+    .hero {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+      color: var(--white);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+      padding: 72px 24px 88px;
+      max-width: 1080px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .hero .eyebrow { color: var(--orange); }
+    .hero h1 {
+      font-size: clamp(44px, 7vw, 76px);
+      font-weight: 800;
+      margin: 10px 0 18px;
+    }
+    .hero h1 .hl { color: var(--orange); }
+    .hero p.lead {
+      font-size: 19px;
+      color: #C7D5E4;
+      max-width: 44ch;
+      margin-bottom: 30px;
+    }
+    .hero-cta { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .hero-phone {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 1px;
+      color: #C7D5E4;
+      text-decoration: none;
+    }
+    .hero-phone:hover { color: var(--white); }
+    .hero-badge {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      transform: rotate(2deg);
+      justify-self: center;
+      max-width: 340px;
+    }
+    .hero-badge img { border-radius: 12px; }
+
+    /* signature: dashed route line */
+    .route {
+      position: relative;
+      padding-left: 0;
+    }
+    .route-svg { display: block; width: 100%; height: 46px; }
+
+    /* ---------- sections ---------- */
+    section { padding: 76px 0; }
+    .section-head { max-width: 620px; margin-bottom: 44px; }
+    .section-head p { color: var(--slate); margin-top: 12px; font-size: 17px; }
+
+    /* services */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--tint);
+      border-radius: var(--radius);
+      padding: 26px 24px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(18, 53, 91, 0.10); }
+    .card .ico {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      background: var(--tint);
+      display: grid; place-items: center;
+      margin-bottom: 16px;
+      color: var(--navy);
+    }
+    .card h3 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .card p { color: var(--slate); font-size: 15.5px; }
+
+    /* steps — the route */
+    .steps-bg { background: var(--white); border-top: 1px solid var(--tint); border-bottom: 1px solid var(--tint); }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      position: relative;
+    }
+    .steps::before {
+      content: "";
+      position: absolute;
+      top: 30px; left: 8%; right: 8%;
+      border-top: 3px dashed var(--orange);
+      opacity: 0.55;
+    }
+    .step { position: relative; text-align: left; padding-top: 0; }
+    .step .pin {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 26px;
+      display: grid; place-items: center;
+      border: 4px solid var(--paper);
+      box-shadow: 0 0 0 3px var(--orange);
+      position: relative;
+      z-index: 1;
+      margin-bottom: 18px;
+    }
+    .step h3 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+    .step p { color: var(--slate); font-size: 15.5px; }
+
+    /* van / lucas */
+    .van-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .van-copy p { color: var(--slate); font-size: 17px; margin-top: 14px; }
+    .van-specs {
+      margin-top: 26px;
+      display: grid;
+      gap: 12px;
+    }
+    .spec {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--white);
+      border: 1px solid var(--tint);
+      border-left: 4px solid var(--orange);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-weight: 600;
+      font-size: 15.5px;
+    }
+    .van-visual {
+      background: var(--navy);
+      border-radius: 20px;
+      padding: 36px;
+      color: var(--white);
+      text-align: center;
+    }
+    .van-visual img { border-radius: 14px; margin-bottom: 20px; }
+    .van-visual .plate {
+      display: inline-block;
+      font-family: var(--display);
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: var(--white);
+      color: var(--navy);
+      border-radius: 8px;
+      padding: 8px 20px;
+      font-size: 20px;
+      border-bottom: 4px solid var(--orange);
+    }
+
+    /* area + final CTA */
+    .final {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+      color: var(--white);
+      text-align: center;
+    }
+    .final h2 { font-size: clamp(34px, 5vw, 54px); }
+    .final p { color: #C7D5E4; max-width: 52ch; margin: 16px auto 32px; font-size: 18px; }
+    .final .btn-wa { font-size: 24px; padding: 18px 36px; }
+
+    /* footer */
+    footer {
+      background: var(--navy-deep);
+      color: #9FB4CA;
+      padding: 36px 0 90px;
+      font-size: 15px;
+    }
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .foot a { color: var(--white); text-decoration: none; }
+    .foot a:hover { text-decoration: underline; }
+
+    /* floating whatsapp */
+    .wa-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 60;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--wa);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      transition: transform 0.15s ease;
+    }
+    .wa-float:hover { transform: scale(1.08); }
+    .wa-float:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn-wa, .card, .wa-float { transition: none; }
+    }
+    @media (max-width: 860px) {
+      .hero-inner { grid-template-columns: 1fr; padding: 56px 24px 64px; }
+      .hero-badge { transform: none; max-width: 280px; }
+      .van-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; gap: 34px; }
+      .steps::before {
+        top: 30px; bottom: 30px; left: 28px; right: auto;
+        border-top: none;
+        border-left: 3px dashed var(--orange);
+      }
+      .step { padding-left: 84px; }
+      .step .pin { position: absolute; left: 0; top: 0; margin: 0; }
+      .nav .btn-wa span { display: none; }
+      .nav .btn-wa { padding: 9px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="nav" aria-label="Principal">
+    <a class="brand" href="#topo">
+      <img src="assets/favicon-192.png" alt="Logo Rota Master" width="46" height="46">
+      <span class="brand-name">Rota Master<small>Fretes e Transportes</small></span>
+    </a>
+    <a class="btn-wa" href="https://wa.me/5519971577055?text=Ol%C3%A1%20Lucas!%20Quero%20um%20or%C3%A7amento%20de%20frete." target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.2-.3.3-.5s0-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1 2.7 11.4 11.4 0 0 0 4.4 3.9 14.9 14.9 0 0 0 1.5.6 3.6 3.6 0 0 0 1.6.1 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.2c-.1-.2-.3-.2-.6-.4Z"/></svg>
+      <span>Chamar no WhatsApp</span>
+    </a>
+  </nav>
+</header>
+
+<main id="topo">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">Piracicaba e região · SP</span>
+        <h1>Chamou,<br>carregou,<br><span class="hl">chegou.</span></h1>
+        <p class="lead">Frete, carreto e pequenas mudanças com van Renault Master — e sem telefone que ninguém atende: aqui quem responde é o <strong>Lucas</strong>, o motorista dono.</p>
+        <div class="hero-cta">
+          <a class="btn-wa" href="https://wa.me/5519971577055?text=Ol%C3%A1%20Lucas!%20Quero%20um%20or%C3%A7amento%20de%20frete." target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.2-.3.3-.5s0-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1 2.7 11.4 11.4 0 0 0 4.4 3.9 14.9 14.9 0 0 0 1.5.6 3.6 3.6 0 0 0 1.6.1 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.2c-.1-.2-.3-.2-.6-.4Z"/></svg>
+            Pedir orçamento
+          </a>
+          <a class="hero-phone" href="tel:+5519971577055">(19) 97157-7055</a>
+        </div>
+      </div>
+      <div class="hero-badge">
+        <img src="assets/logo-512.png" alt="Rota Master — Fretes e Transportes, van Renault Master" width="340" height="340">
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">O que a Master leva</span>
+        <h2>Frete do tamanho certo</h2>
+        <p>Nem todo transporte precisa de caminhão. Para a maioria das entregas e mudanças do dia a dia, a van resolve — mais ágil pra carregar, estacionar e chegar.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-6 9 6v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg></div>
+          <h3>Pequenas mudanças</h3>
+          <p>Kitnet, quarto, escritório ou a mudança compacta inteira — carregada com cuidado de quem sabe que é sua.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2"/><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M12 8v12"/></svg></div>
+          <h3>Móveis e eletro</h3>
+          <p>Comprou sofá, geladeira, guarda-roupa? Buscamos na loja ou no vendedor e entregamos na sua porta.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.5 9.4 7.55 4.24"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05"/><path d="M12 22.08V12"/></svg></div>
+          <h3>Entregas para lojas</h3>
+          <p>Frete fixo ou avulso para comércios e e-commerce da região que precisam de entrega ágil e confiável.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <h3>Carreto expresso</h3>
+          <p>Aquela carga que não pode esperar. Combinou o horário, a Master está na porta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="steps-bg" id="como-funciona">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">A rota é simples</span>
+        <h2>Do seu WhatsApp à entrega</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="pin">1</div>
+          <h3>Chame o Lucas</h3>
+          <p>Mande no WhatsApp o que precisa levar, de onde e para onde. Foto ajuda no orçamento.</p>
+        </div>
+        <div class="step">
+          <div class="pin">2</div>
+          <h3>Feche o valor</h3>
+          <p>Orçamento direto, sem intermediário e sem surpresa. Preço combinado é preço cobrado.</p>
+        </div>
+        <div class="step">
+          <div class="pin">3</div>
+          <h3>Carga entregue</h3>
+          <p>O Lucas busca, transporta e entrega no horário combinado. Você acompanha tudo pelo WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A VAN / O LUCAS -->
+  <section id="a-van">
+    <div class="wrap van-grid">
+      <div class="van-copy">
+        <span class="eyebrow">Quem leva a sua carga</span>
+        <h2>O Lucas e a Master</h2>
+        <p>Nada de despachar sua mudança com um desconhecido. Na Rota Master, quem atende o WhatsApp é quem dirige a van: o Lucas cuida da sua carga do primeiro ao último quilômetro.</p>
+        <div class="van-specs">
+          <div class="spec">🚐 Renault Master — van de carga branca, furgão fechado</div>
+          <div class="spec">📦 Espaço para mudanças compactas, móveis grandes e eletro</div>
+          <div class="spec">🔒 Carga protegida de chuva, sol e olhares na rua</div>
+          <div class="spec">📍 Base em Piracicaba/SP — atende toda a região</div>
+        </div>
+      </div>
+      <div class="van-visual">
+        <img src="assets/logo-512.png" alt="Marca Rota Master com a van Renault Master" width="512" height="512">
+        <span class="plate">Piracicaba · SP</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final" id="orcamento">
+    <div class="wrap">
+      <span class="eyebrow" style="color: var(--orange);">Orçamento em minutos</span>
+      <h2>Precisa de frete hoje?</h2>
+      <p>Manda um "oi" que o Lucas responde. Diga o que precisa levar, de onde e para onde — e receba o valor direto no seu WhatsApp.</p>
+      <a class="btn-wa" href="https://wa.me/5519971577055?text=Ol%C3%A1%20Lucas!%20Quero%20um%20or%C3%A7amento%20de%20frete." target="_blank" rel="noopener">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.2-.3.3-.5s0-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1 2.7 11.4 11.4 0 0 0 4.4 3.9 14.9 14.9 0 0 0 1.5.6 3.6 3.6 0 0 0 1.6.1 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.2c-.1-.2-.3-.2-.6-.4Z"/></svg>
+        (19) 97157-7055
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <strong style="color: var(--white); font-family: var(--display); text-transform: uppercase; letter-spacing: 1px;">Rota Master — Fretes e Transportes</strong><br>
+      R. Professor Wilson Azevedo Grilo, 185 — Piracicaba/SP
+    </div>
+    <div>
+      WhatsApp: <a href="https://wa.me/5519971577055" target="_blank" rel="noopener">(19) 97157-7055</a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5519971577055?text=Ol%C3%A1%20Lucas!%20Quero%20um%20or%C3%A7amento%20de%20frete." target="_blank" rel="noopener" aria-label="Conversar com o Lucas no WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.2-.3.3-.5s0-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1 2.7 11.4 11.4 0 0 0 4.4 3.9 14.9 14.9 0 0 0 1.5.6 3.6 3.6 0 0 0 1.6.1 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.2c-.1-.2-.3-.2-.6-.4Z"/></svg>
+</a>
+
+</body>
+</html>
